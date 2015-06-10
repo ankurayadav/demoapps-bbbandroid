@@ -53,14 +53,22 @@ public class MainActivity extends Activity {
  */
         while(1==1)
         {
-        	if(readGPIO(8, 19) == true)
+        	//if(readGPIO(8, 19) == true)
         	{
-        		writeGPIO(9, 14, 1);
+        		writeGPIO(9, 11, 1);
         	}
-        	else
+        	//else
+        	try {
+    			Thread.sleep(1000);
+    		} catch (InterruptedException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+
         	{
-        		writeGPIO(9, 14, 0);
+        		writeGPIO(9, 11, 0);
         	}
+            
             try {
     			Thread.sleep(1000);
     		} catch (InterruptedException e) {
