@@ -50,14 +50,15 @@ void Java_com_packt_gpio_MainActivity_writeGPIO(JNIEnv *env, jobject this, jint 
 jint Java_com_packt_adc_MainActivity_readADC(JNIEnv *env, jobject this, jint channel)
 {
 	jint ret;
-	ret = readADC(0) ;
+	ret = readADC(channel) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "readADC() failed!");
-	} else {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "readADC() succeeded.");
+		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "readADC(%d) failed!", (unsigned int) channel);
 		ret = JNI_FALSE;
+	} else {
+		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "readADC(%d) succeeded", (unsigned int) channel);
 	}
+
 	return ret;
 }
 

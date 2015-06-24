@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
-import com.packt.adc.R;
+import com.packt.gpio.R;
 
 public class MainActivity extends Activity {
 	public final static String PACKT_TAG = "com.packt";
@@ -25,21 +25,14 @@ public class MainActivity extends Activity {
 		TextView tv = (TextView) findViewById(R.id.button_state);
         tv.setText("Button State: UNKNOWN");
         
-        while(true)
+       // while(true)
         {
     		int value = readADC(5);
     		
     		String status = Integer.toString(value);
     		
             tv.setText("Button State: " + status);
-            
-            try {
-    			Thread.sleep(100);
-    		} catch (InterruptedException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		}
-            
+                  
         }
 	}
 }
