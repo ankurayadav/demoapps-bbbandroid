@@ -6,7 +6,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
-import com.packt.gpio.R;
+
+import com.packt.adc.R;
 
 public class MainActivity extends Activity {
 	public final static String PACKT_TAG = "com.packt";
@@ -23,16 +24,25 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		TextView tv = (TextView) findViewById(R.id.button_state);
-        tv.setText("Button State: UNKNOWN");
+        tv.setText("Slider State: UNKNOWN");
         
-       // while(true)
-        {
-    		int value = readADC(5);
+    	int value = readADC(5);
     		
-    		String status = Integer.toString(value);
+    	String status = Integer.toString(value);
     		
-            tv.setText("Button State: " + status);
-                  
-        }
+        tv.setText("Slider State: " + status);
+
+	}
+	
+	public void onClickButtonPollStatus(View view)
+	{
+		TextView tv = (TextView) findViewById(R.id.button_state);
+        tv.setText("Slider State: UNKNOWN");
+        
+    	int value = readADC(5);
+    		
+    	String status = Integer.toString(value);
+    		
+        tv.setText("Slider State: " + status);
 	}
 }

@@ -15,8 +15,8 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="right"
-	        android:text="@string/button_poll"
-	        android:onClick="onClickButtonPollStatus" />
+	        android:onClick="onClickButtonPollStatus"
+	        android:text="@string/button_poll" />
 
 	    <TextView
 	        android:id="@+id/button_state"
@@ -30,20 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
     	android:orientation="horizontal" >
-    
-	    <Button
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="left"
-	        android:text="@string/button_on"
-	        android:onClick="onClickButtonLightOn" />
-	
-	    <Button
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="right"
-	        android:text="@string/button_off"
-	        android:onClick="onClickButtonLightOff" />
 	</LinearLayout>
 
 </LinearLayout>
