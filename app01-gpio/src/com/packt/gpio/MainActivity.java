@@ -31,52 +31,6 @@ public class MainActivity extends Activity {
         	Log.e(PACKT_TAG, "Unable to open GPIO.");
         	finish();
         }
-        
-/* blink LED
-        while(1==1)
-        { 	
-        writeGPIO(9, 14, 0);
-        try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-        writeGPIO(9, 14, 1);
-        try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        }
- */
-        while(1==1)
-        {
-        	//if(readGPIO(8, 19) == true)
-        	{
-        		writeGPIO(9, 11, 1);
-        	}
-        	//else
-        	try {
-    			Thread.sleep(1000);
-    		} catch (InterruptedException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		}
-
-        	{
-        		writeGPIO(9, 11, 0);
-        	}
-            
-            try {
-    			Thread.sleep(1000);
-    		} catch (InterruptedException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		}
-        }
-        
 	}
 
 	@Override
@@ -101,13 +55,11 @@ public class MainActivity extends Activity {
 	
 	public void onClickButtonLightOn(View view)
 	{
-		//writeGPIO(9, 11, 1);
-		writeGPIO(8, 7, 1);
+		writeGPIO(9, 11, 1);
 	}
 	
 	public void onClickButtonLightOff(View view)
 	{
-		//writeGPIO(9, 11, 0);
-		writeGPIO(8, 7, 0);
+		writeGPIO(9, 11, 0);
 	}
 }
