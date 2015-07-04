@@ -54,7 +54,7 @@ jint Java_com_packt_adc_MainActivity_readADC(JNIEnv *env, jobject this, jint cha
 
 	if ( ret == -1 ) {
 		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "readADC(%d) failed!", (unsigned int) channel);
-		ret = JNI_FALSE;
+		ret = -1;
 	} else {
 		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "readADC(%d) succeeded", (unsigned int) channel);
 	}

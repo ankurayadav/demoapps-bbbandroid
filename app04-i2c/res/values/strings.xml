@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">gpio</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_state">Button State: </string>
+    <string name="button_poll">Poll Slider State</string>
+    <string name="button_on">Turn light on</string>
+    <string name="button_off">Turn light off</string>
+
+</resources>
