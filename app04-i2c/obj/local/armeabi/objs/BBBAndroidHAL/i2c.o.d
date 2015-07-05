@@ -1,4 +1,4 @@
-/home/ankur/Dev/gsoc/demoapps-bbbandroid/app04-i2c/obj/local/armeabi/objs/packtHAL/i2c.o: \
+/home/ankur/Dev/gsoc/demoapps-bbbandroid/app04-i2c/obj/local/armeabi/objs/BBBAndroidHAL/i2c.o: \
  /home/ankur/Dev/gsoc/demoapps-bbbandroid/app04-i2c/jni/i2c.c \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/stdio.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
@@ -53,7 +53,7 @@
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/termbits.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/ioctl_compat.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/i2c-dev.h \
- /home/ankur/Dev/gsoc/demoapps-bbbandroid/app04-i2c/jni/packtHAL.h
+ /home/ankur/Dev/gsoc/demoapps-bbbandroid/app04-i2c/jni/bbbandroidHAL.h
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/stdio.h:
 
@@ -161,4 +161,4 @@
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/i2c-dev.h:
 
-/home/ankur/Dev/gsoc/demoapps-bbbandroid/app04-i2c/jni/packtHAL.h:
+/home/ankur/Dev/gsoc/demoapps-bbbandroid/app04-i2c/jni/bbbandroidHAL.h:

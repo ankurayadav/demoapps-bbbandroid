@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <android/log.h>
 
-#include "packtHAL.h"
+#include "bbbandroidHAL.h"
 
-#define PACKT_NATIVE_TAG "NDK_PacktApplication"
+#define BBBANDROID_NATIVE_TAG "NDK_BBBAndroidApplication"
 #define BUFFER_SIZE 64
 
 /* Begin the JNI wrapper functions for the GPIO app */
@@ -13,9 +13,9 @@ jboolean Java_com_packt_gpio_MainActivity_openGPIO(JNIEnv *env, jobject this)
 {
 	jboolean ret = JNI_TRUE;
 	if ( openGPIO(0) == 0 ) {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "GPIO Opened.");
+		__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "GPIO Opened.");
 	} else {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "openGPIO() failed!");
+		__android_log_print(ANDROID_LOG_ERROR, BBBANDROID_NATIVE_TAG, "openGPIO() failed!");
 		ret = JNI_FALSE;
 	}
 	return ret;
@@ -23,7 +23,7 @@ jboolean Java_com_packt_gpio_MainActivity_openGPIO(JNIEnv *env, jobject this)
 
 void Java_com_packt_gpio_MainActivity_closeGPIO(JNIEnv *env, jobject this)
 {
-	__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "GPIO closing...");
+	__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "GPIO closing...");
 	closeGPIO();
 }
 
@@ -31,7 +31,7 @@ jboolean Java_com_packt_gpio_MainActivity_readGPIO(JNIEnv *env, jobject this, ji
 {
 	int ret = readGPIO((unsigned int) header, (unsigned int) pin);
 	__android_log_print(ANDROID_LOG_DEBUG,
-			PACKT_NATIVE_TAG,
+			BBBANDROID_NATIVE_TAG,
 			"readGPIO(%d, %d) == %d", (unsigned int) header, (unsigned int) pin, ret);
 	return ret == 0 ? JNI_FALSE : JNI_TRUE;
 }
@@ -40,7 +40,7 @@ void Java_com_packt_gpio_MainActivity_writeGPIO(JNIEnv *env, jobject this, jint 
 {
 	int ret = writeGPIO((unsigned int) header, (unsigned int) pin, (unsigned int) val);
 	__android_log_print(ANDROID_LOG_DEBUG,
-			PACKT_NATIVE_TAG,
+			BBBANDROID_NATIVE_TAG,
 			"writeGPIO(%d, %d, %d) == %d", (unsigned int) header, (unsigned int) pin, (unsigned int) val, ret);
 }
 /* End the JNI wrapper functions for the GPIO app */
@@ -53,10 +53,10 @@ jint Java_com_bbbandroidHAL_adc_MainActivity_readADC(JNIEnv *env, jobject this, 
 	ret = readADC(channel) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "readADC(%d) failed!", (unsigned int) channel);
+		__android_log_print(ANDROID_LOG_ERROR, BBBANDROID_NATIVE_TAG, "readADC(%d) failed!", (unsigned int) channel);
 		ret = -1;
 	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "readADC(%d) succeeded", (unsigned int) channel);
+		__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "readADC(%d) succeeded", (unsigned int) channel);
 	}
 
 	return ret;
@@ -72,10 +72,10 @@ jint Java_com_bbbandroidHAL_i2c_MainActivity_i2cOpenAdaptor(JNIEnv *env, jobject
 	ret = i2cOpenAdaptor(adaptorNumber) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cOpenAdaptor(%d) failed!", (unsigned int) adaptorNumber);
+		__android_log_print(ANDROID_LOG_ERROR, BBBANDROID_NATIVE_TAG, "i2cOpenAdaptor(%d) failed!", (unsigned int) adaptorNumber);
 		ret = -1;
 	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cOpenAdaptor(%d) succeeded", (unsigned int) adaptorNumber);
+		__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "i2cOpenAdaptor(%d) succeeded", (unsigned int) adaptorNumber);
 	}
 
 	return ret;
@@ -87,10 +87,10 @@ jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cSetSlave(JNIEnv *env, jobjec
 	ret = i2cSetSlave(i2cFD, address) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cSetSlave(%d, %d) failed!", (unsigned int) i2cFD, (unsigned int) address);
+		__android_log_print(ANDROID_LOG_ERROR, BBBANDROID_NATIVE_TAG, "i2cSetSlave(%d, %d) failed!", (unsigned int) i2cFD, (unsigned int) address);
 		return JNI_FALSE;
 	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cSetSlave(%d, %d) succeeded", (unsigned int) i2cFD, (unsigned int) address);
+		__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "i2cSetSlave(%d, %d) succeeded", (unsigned int) i2cFD, (unsigned int) address);
 	}
 
 	return JNI_TRUE;
@@ -102,10 +102,10 @@ jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cWriteByte(JNIEnv *env, jobje
 	ret = i2cWriteByte(i2cFD, add, byte) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cWriteByte(%d, %d) failed!", (unsigned int) i2cFD, (unsigned int) byte);
+		__android_log_print(ANDROID_LOG_ERROR, BBBANDROID_NATIVE_TAG, "i2cWriteByte(%d, %d) failed!", (unsigned int) i2cFD, (unsigned int) byte);
 		return JNI_FALSE;
 	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cWriteByte(%d, %d) succeeded", (unsigned int) i2cFD, (unsigned int) byte);
+		__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "i2cWriteByte(%d, %d) succeeded", (unsigned int) i2cFD, (unsigned int) byte);
 	}
 
 	return JNI_TRUE;
@@ -130,10 +130,10 @@ jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cWriteBytes(JNIEnv *env, jobj
 	ret = i2cWriteBytes(i2cFD, add, length, bytes) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cWriteBytes(%d, %d, bytearray) failed!", (unsigned int) i2cFD, (unsigned int) length);
+		__android_log_print(ANDROID_LOG_ERROR, BBBANDROID_NATIVE_TAG, "i2cWriteBytes(%d, %d, bytearray) failed!", (unsigned int) i2cFD, (unsigned int) length);
 		return JNI_FALSE;
 	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cWriteBytes(%d, %d, bytearray) succeeded", (unsigned int) i2cFD, (unsigned int) length);
+		__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "i2cWriteBytes(%d, %d, bytearray) succeeded", (unsigned int) i2cFD, (unsigned int) length);
 	}
 
 	return JNI_TRUE;
@@ -145,16 +145,16 @@ jint Java_com_bbbandroidHAL_i2c_MainActivity_i2cReadByte(JNIEnv *env, jobject th
 	ret = i2cReadByte(i2cFD, add) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cReadByte(%d) failed!", (unsigned int) i2cFD);
+		__android_log_print(ANDROID_LOG_ERROR, BBBANDROID_NATIVE_TAG, "i2cReadByte(%d) failed!", (unsigned int) i2cFD);
 		return -1;
 	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cReadByte(%d) succeeded", (unsigned int) i2cFD);
+		__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "i2cReadByte(%d) succeeded", (unsigned int) i2cFD);
 	}
 
 	return ret;
 }
 
-jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cReadBytes(JNIEnv *env, jobject this, jint i2cFD, jbyte add, jint length, jbyteArray barray)
+jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cReadBytes(JNIEnv *env, jobject this, jint i2cFD, jbyte add, jint length, jintArray barray)
 {
 	jint ret;
 	int i;
@@ -163,20 +163,20 @@ jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cReadBytes(JNIEnv *env, jobje
 	ret = i2cReadBytes(i2cFD, add, length, bytes) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cReadBytes(%d, %d, bytearray) failed!", (unsigned int) i2cFD, (unsigned int) length);
+		__android_log_print(ANDROID_LOG_ERROR, BBBANDROID_NATIVE_TAG, "i2cReadBytes(%d, %d, bytearray) failed!", (unsigned int) i2cFD, (unsigned int) length);
 		return JNI_FALSE;
 	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cReadBytes(%d, %d, bytearray) succeeded", (unsigned int) i2cFD, (unsigned int) length);
+		__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "i2cReadBytes(%d, %d, bytearray) succeeded", (unsigned int) i2cFD, (unsigned int) length);
 	}
 
-	jbyte* bufferPtr = (*env)->GetByteArrayElements(env, barray, NULL);
+	jint* bufferPtr = (*env)->GetIntArrayElements(env, barray, NULL);
 
 	for(i=0; i<length; i++)
 	{
 		bufferPtr[i] = bytes[i];
 	}
 
-	(*env)->ReleaseByteArrayElements(env, barray, bufferPtr, 0);
+	(*env)->ReleaseIntArrayElements(env, barray, bufferPtr, 0);
 
 	return JNI_TRUE;
 }
@@ -185,7 +185,7 @@ void Java_com_bbbandroidHAL_i2c_MainActivity_i2cClose(JNIEnv *env, jobject this,
 {
 	i2cClose(i2cFD) ;
 
-	__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cClose(%d, bytearray) succeeded", (unsigned int) i2cFD);
+	__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "i2cClose(%d, bytearray) succeeded", (unsigned int) i2cFD);
 
 }
 

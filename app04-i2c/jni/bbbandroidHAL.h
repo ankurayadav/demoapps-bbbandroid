@@ -6,16 +6,16 @@
   This code is made available under the BSD license.
 **********************************************************/
 
-#ifndef __PACKTHAL_H__
-#define __PACKTHAL_H__
+#ifndef __BBBANDROIDHAL_H__
+#define __BBBANDROIDHAL_H__
 
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
 /* Library init/shutdown */
-extern int openPacktHAL(void);
-extern int closePacktHAL(void);
+extern int openBBBAndroidHAL(void);
+extern int closeBBBAndroidHAL(void);
 
 /* GPIO interfacing functions */
 extern int openGPIO(const int useMmap);
@@ -38,21 +38,18 @@ extern int pwmRunCheck(unsigned int channel);
 /* ADC interfacing functions */
 extern uint32_t readADC(unsigned int channel);
 
-/* I2C FRAM interfacing functions */
-extern int openFRAM(const unsigned int bus, const unsigned int address);
-extern int writeFRAM(const unsigned int offset, const unsigned int bufferSize,
-  const char *buffer); 
-extern int readFRAM(const unsigned int offset, const unsigned int bufferSize,
-  const char *buffer);
-extern int closeFRAM(void);
+/* I2C interfacing functions */
+extern int i2cOpenAdaptor(uint8_t adaptorNumber);
+extern int i2cSetSlave(int i2cFD, uint8_t address);
+extern void i2cClose(int i2cFD);
+extern int i2cSetAddress(int i2cFD, unsigned char add);
+extern int i2cWriteByte(int i2cFD, unsigned char add, unsigned char byte);
+extern int i2cWriteBytes(int i2cFD, unsigned char add, int length, uint8_t *bytes);
+extern int i2cReadByte(int i2cFD, unsigned char add);
+extern int i2cReadBytes(int i2cFD, unsigned char add, int length, uint8_t *buff);
 
-/* SPI BMP183 interfacing functions */
-extern int openSensor(void);
-extern float getSensorTemperature(void);
-extern float getSensorPressure(void);
-extern int closeSensor(void);
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
-#endif /* __PACKTHAL_H__ */
+#endif /* __BBBANDROIDHAL_H__ */
 
