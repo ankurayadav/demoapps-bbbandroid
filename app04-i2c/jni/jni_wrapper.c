@@ -96,25 +96,10 @@ jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cSetSlave(JNIEnv *env, jobjec
 	return JNI_TRUE;
 }
 
-jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cSetAddress(JNIEnv *env, jobject this, jint i2cFD, jbyte add)
+jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cWriteByte(JNIEnv *env, jobject this, jint i2cFD, jbyte add, jbyte byte)
 {
 	jint ret;
-	ret = i2cSetAddress(i2cFD, add) ;
-
-	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cSetAddress(%d, %d) failed!", (unsigned int) i2cFD, (unsigned int) add);
-		return JNI_FALSE;
-	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cSetAddress(%d, %d) succeeded", (unsigned int) i2cFD, (unsigned int) add);
-	}
-
-	return JNI_TRUE;
-}
-
-jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cWriteByte(JNIEnv *env, jobject this, jint i2cFD, jbyte byte)
-{
-	jint ret;
-	ret = i2cWriteByte(i2cFD, byte) ;
+	ret = i2cWriteByte(i2cFD, add, byte) ;
 
 	if ( ret == -1 ) {
 		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cWriteByte(%d, %d) failed!", (unsigned int) i2cFD, (unsigned int) byte);
@@ -126,25 +111,38 @@ jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cWriteByte(JNIEnv *env, jobje
 	return JNI_TRUE;
 }
 
-jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cWriteBytes(JNIEnv *env, jobject this, jint i2cFD, jbyte barray[])
+jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cWriteBytes(JNIEnv *env, jobject this, jint i2cFD,jbyte add, jint length, jbyteArray barray)
 {
 	jint ret;
-	ret = i2cWriteBytes(i2cFD, barray) ;
+	int i;
+
+	jbyte* bufferPtr = (*env)->GetByteArrayElements(env, barray, NULL);
+
+	uint8_t bytes[length] ;
+
+	for(i=0; i<length; i++)
+	{
+		bytes[i] = bufferPtr[i];
+	}
+
+	(*env)->ReleaseByteArrayElements(env, barray, bufferPtr, 0);
+
+	ret = i2cWriteBytes(i2cFD, add, length, bytes) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cWriteBytes(%d, bytearray) failed!", (unsigned int) i2cFD);
+		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cWriteBytes(%d, %d, bytearray) failed!", (unsigned int) i2cFD, (unsigned int) length);
 		return JNI_FALSE;
 	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cWriteBytes(%d, bytearray) succeeded", (unsigned int) i2cFD);
+		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cWriteBytes(%d, %d, bytearray) succeeded", (unsigned int) i2cFD, (unsigned int) length);
 	}
 
 	return JNI_TRUE;
 }
 
-jint Java_com_bbbandroidHAL_i2c_MainActivity_i2cReadByte(JNIEnv *env, jobject this, jint i2cFD)
+jint Java_com_bbbandroidHAL_i2c_MainActivity_i2cReadByte(JNIEnv *env, jobject this, jint i2cFD, jbyte add)
 {
 	jint ret;
-	ret = i2cReadByte(i2cFD) ;
+	ret = i2cReadByte(i2cFD, add) ;
 
 	if ( ret == -1 ) {
 		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cReadByte(%d) failed!", (unsigned int) i2cFD);
@@ -156,17 +154,29 @@ jint Java_com_bbbandroidHAL_i2c_MainActivity_i2cReadByte(JNIEnv *env, jobject th
 	return ret;
 }
 
-jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cReadBytes(JNIEnv *env, jobject this, jint i2cFD, jbyte barray[])
+jboolean Java_com_bbbandroidHAL_i2c_MainActivity_i2cReadBytes(JNIEnv *env, jobject this, jint i2cFD, jbyte add, jint length, jbyteArray barray)
 {
 	jint ret;
-	ret = i2cReadBytes(i2cFD, barray) ;
+	int i;
+	uint8_t bytes[length] ;
+
+	ret = i2cReadBytes(i2cFD, add, length, bytes) ;
 
 	if ( ret == -1 ) {
-		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cReadBytes(%d, bytearray) failed!", (unsigned int) i2cFD);
+		__android_log_print(ANDROID_LOG_ERROR, PACKT_NATIVE_TAG, "i2cReadBytes(%d, %d, bytearray) failed!", (unsigned int) i2cFD, (unsigned int) length);
 		return JNI_FALSE;
 	} else {
-		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cReadBytes(%d, bytearray) succeeded", (unsigned int) i2cFD);
+		__android_log_print(ANDROID_LOG_DEBUG, PACKT_NATIVE_TAG, "i2cReadBytes(%d, %d, bytearray) succeeded", (unsigned int) i2cFD, (unsigned int) length);
 	}
+
+	jbyte* bufferPtr = (*env)->GetByteArrayElements(env, barray, NULL);
+
+	for(i=0; i<length; i++)
+	{
+		bufferPtr[i] = bytes[i];
+	}
+
+	(*env)->ReleaseByteArrayElements(env, barray, bufferPtr, 0);
 
 	return JNI_TRUE;
 }

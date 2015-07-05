@@ -14,11 +14,10 @@ public class MainActivity extends Activity {
 
     private native int i2cOpenAdaptor(int adaptorNumber);
     private native boolean i2cSetSlave(int i2cFD, int adress);
-    private native boolean i2cSetAddress(int i2cFD, byte i);
-    private native boolean i2cWriteByte(int i2cFD, byte data);
-    private native boolean i2cWriteBytes(int i2cFD, byte data[]);
-    private native int i2cReadByte(int i2cFD);
-    private native boolean i2cReadBytes(int i2cFD, byte data[]);
+    private native boolean i2cWriteByte(int i2cFD,byte add, byte data);
+    private native boolean i2cWriteBytes(int i2cFD,byte add, int length, byte data[]);
+    private native int i2cReadByte(int i2cFD, byte add);
+    private native boolean i2cReadBytes(int i2cFD, byte add, int length, byte data[]);
     private native void i2cClose(int i2cFD);
 
     static {
@@ -41,17 +40,16 @@ public class MainActivity extends Activity {
 		{
 			if(i2cSetSlave(i2cFD, 0x53))
 			{
-				if(i2cSetAddress(i2cFD, (byte) 0x00))
-				{
-					int value = i2cReadByte(i2cFD);
+				int value = i2cReadByte(i2cFD, (byte) 0x00);
 				
-					tv.setText("Connected to i2c-1 with FD :" + i2cFD + " Slave :" + 0x53 + 
-							" ChipID Address :0x00 ChipID :" + value);
+				if(value !=-1 )
+				{
+					tv.setText("Connected to i2c-1 with FD :" + i2cFD + ", Slave :" + 0x53 + 
+							", ChipID Address :0x00, ChipID :" + value);
 				}
 				
 			}
 		}	
-		
 		
 	}
 	
