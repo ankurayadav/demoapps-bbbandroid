@@ -1,10 +1,7 @@
-GPIO access using Android on BBBAndroid
+I2C access using Android on BBBAndroid
 ==============================
 
 Hardware requirements:
 -----------------------------
 
-1. Breadboard
-2. LED
-3. 1K resister
-4. switch
+1. ADXL345 breakout board
