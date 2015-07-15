@@ -1,5 +1,5 @@
-/home/ankur/workspace/gpio/obj/local/armeabi/objs/packtHAL/bmp183.o: \
- /home/ankur/workspace/gpio/jni/bmp183.c \
+/home/ankur/workspace/gpio/obj/local/armeabi/objs/BBBAndroidHAL/i2c.o: \
+ /home/ankur/workspace/gpio/jni/i2c.c \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/stdio.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -17,31 +17,14 @@
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/types.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/machine/kernel.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/stat.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/time.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/time.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/stat.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/endian.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/endian.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/machine/endian.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/mman.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/mman.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/mman.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/mman-common.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/page.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/ioctl.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/ioctl.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/ioctl.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/ioctl.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/ioctls.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/termbits.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/ioctl_compat.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/fcntl.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/fcntl.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/fcntl.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/fcntl.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/unistd.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/select.h \
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/time.h \
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/time.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/signal.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/limits.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/limits.h \
@@ -49,6 +32,7 @@
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/machine/internal_types.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/machine/limits.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/page.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/string.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/malloc.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/signal.h \
@@ -61,9 +45,15 @@
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/sysconf.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/capability.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/pathconf.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/spi/spidev.h \
- /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/math.h \
- /home/ankur/workspace/gpio/jni/packtHAL.h
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/ioctl.h \
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/ioctl.h \
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/ioctl.h \
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/ioctl.h \
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/ioctls.h \
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/termbits.h \
+ /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/ioctl_compat.h \
+ /home/ankur/workspace/gpio/jni/include/linux/i2c-dev.h \
+ /home/ankur/workspace/gpio/jni/bbbandroidHAL.h
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/stdio.h:
 
@@ -99,44 +89,6 @@
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h:
 
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/stat.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/time.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/time.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/stat.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/endian.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/endian.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/machine/endian.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/mman.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/mman.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/mman.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/mman-common.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/page.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/ioctl.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/ioctl.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/ioctl.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/ioctl.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/ioctls.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/termbits.h:
-
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/ioctl_compat.h:
-
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/fcntl.h:
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/fcntl.h:
@@ -148,6 +100,10 @@
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/unistd.h:
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/select.h:
+
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/time.h:
+
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/time.h:
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/signal.h:
 
@@ -162,6 +118,8 @@
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/machine/limits.h:
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/syslimits.h:
+
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/page.h:
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/string.h:
 
@@ -187,8 +145,20 @@
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/pathconf.h:
 
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/spi/spidev.h:
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/ioctl.h:
 
-/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/math.h:
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/ioctl.h:
 
-/home/ankur/workspace/gpio/jni/packtHAL.h:
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/ioctl.h:
+
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/ioctl.h:
+
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/ioctls.h:
+
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/termbits.h:
+
+/home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/ioctl_compat.h:
+
+/home/ankur/workspace/gpio/jni/include/linux/i2c-dev.h:
+
+/home/ankur/workspace/gpio/jni/bbbandroidHAL.h:

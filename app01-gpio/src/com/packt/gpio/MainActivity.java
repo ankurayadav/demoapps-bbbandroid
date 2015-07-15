@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
     private native void writeGPIO(int header, int pin, int val);
 
     static {
-        System.loadLibrary("packtHAL");
+        System.loadLibrary("BBBAndroidHAL");
     }
 
 	@Override
@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 
 	public void onClickButtonPollStatus(View view)
 	{
-		String status = readGPIO(9, 13) == true ? "ON" : "OFF";
+		String status = readGPIO(9, 27) == true ? "ON" : "OFF";
 		TextView tv = (TextView) findViewById(R.id.button_state);
         tv.setText("Button State: " + status);
 	}

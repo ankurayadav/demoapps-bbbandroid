@@ -1,4 +1,4 @@
-/home/ankur/workspace/gpio/obj/local/armeabi/objs/packtHAL/gpio.o: \
+/home/ankur/workspace/gpio/obj/local/armeabi/objs/BBBAndroidHAL/gpio.o: \
  /home/ankur/workspace/gpio/jni/gpio.c \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/stdio.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
@@ -63,7 +63,7 @@
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm/errno.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/errno.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/errno-base.h \
- /home/ankur/workspace/gpio/jni/packtHAL.h
+ /home/ankur/workspace/gpio/jni/bbbandroidHAL.h
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/stdio.h:
 
@@ -191,4 +191,4 @@
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/asm-generic/errno-base.h:
 
-/home/ankur/workspace/gpio/jni/packtHAL.h:
+/home/ankur/workspace/gpio/jni/bbbandroidHAL.h:
