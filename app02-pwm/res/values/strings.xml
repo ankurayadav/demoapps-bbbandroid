@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">pwm</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_state">PWM State: </string>
+    <string name="button_poll">Poll PWM State</string>
+    <string name="button_on">Run PWM</string>
+    <string name="button_off">Stop PWM</string>
+
+</resources>
