@@ -1,4 +1,4 @@
-package com.packt.adc;
+package com.bbbandroid.adc;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -7,15 +7,14 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
-import com.packt.adc.R;
+import com.bbbandroid.adc.R;
 
 public class MainActivity extends Activity {
-	public final static String PACKT_TAG = "com.packt";
 	
     private native int readADC(int channel);
 
     static {
-        System.loadLibrary("packtHAL");
+        System.loadLibrary("BBBAndroidHAL");
     }
 
 	@Override

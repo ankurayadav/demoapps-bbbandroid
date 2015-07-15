@@ -1,4 +1,4 @@
-/home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/obj/local/armeabi/objs/packtHAL/jni_wrapper.o: \
+/home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/obj/local/armeabi/objs/BBBAndroidHAL/jni_wrapper.o: \
  /home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/jni_wrapper.c \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/jni.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
@@ -21,7 +21,7 @@
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/machine/kernel.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/android/log.h \
- /home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/packtHAL.h
+ /home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/bbbandroidHAL.h
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/jni.h:
 
@@ -65,4 +65,4 @@
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/android/log.h:
 
-/home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/packtHAL.h:
+/home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/bbbandroidHAL.h:

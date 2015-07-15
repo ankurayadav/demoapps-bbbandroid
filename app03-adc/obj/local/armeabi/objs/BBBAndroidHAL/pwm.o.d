@@ -1,5 +1,5 @@
-/home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/obj/local/armeabi/objs/packtHAL/adc.o: \
- /home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/adc.c \
+/home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/obj/local/armeabi/objs/BBBAndroidHAL/pwm.o: \
+ /home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/pwm.c \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/stdio.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -17,7 +17,7 @@
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/linux/types.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/machine/kernel.h \
  /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h \
- /home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/packtHAL.h
+ /home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/bbbandroidHAL.h
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/stdio.h:
 
@@ -53,4 +53,4 @@
 
 /home/ankur/Android/android-ndk-r10d/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h:
 
-/home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/packtHAL.h:
+/home/ankur/Dev/gsoc/demoapps-bbbandroid/app03-adc/jni/bbbandroidHAL.h:
