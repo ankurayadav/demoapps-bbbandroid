@@ -7,10 +7,12 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
     
     public static HardwareTask hwTask ;
+    TextView tv ;
     
     static {
         System.loadLibrary("BBBAndroidHAL");

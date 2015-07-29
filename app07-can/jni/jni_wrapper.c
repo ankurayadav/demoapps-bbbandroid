@@ -471,20 +471,21 @@ jboolean JAVA_CLASS_PATH(canSendBytes)(JNIEnv *env, jobject this, jint canFD, ji
 
 jbyteArray JAVA_CLASS_PATH(canReadBytes)(JNIEnv *env, jobject this, jint canFD)
 {
-	jint ret=0;
-	int i;
-
 	unsigned char *value ;
-	value = canReadBytes(canFD) ;
+	int length;
+	value = canReadBytes(canFD, &length) ;
 
-	__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "canReadBytes(%d, bytearray) succeeded", (unsigned int) canFD);
+    if(value!=NULL)
+    {
+    	__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "canReadBytes(%d) succeeded", (unsigned int) canFD);
+    	
+		jbyteArray barray = (*env)->NewByteArray(env, length);
+    	(*env)->SetByteArrayRegion(env, barray, 0, length, value);
 
+		return barray;
+    }
 
-	jbyteArray barray = (*env)->NewByteArray(env, ret);
-
-    (*env)->SetByteArrayRegion(env, barray, 0, ret, value);
-
-	return barray;
+	return NULL;
 }
 
 void JAVA_CLASS_PATH(canClose)(JNIEnv *env, jobject this, jint canFD)

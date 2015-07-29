@@ -15,13 +15,13 @@ public class HardwareTask extends AsyncTask<Void, Void, Boolean>{
 	private native void canClose(int canFD);
 	
 	int canFD;
+	String s;
 	Activity mCallerActivity = null;
 	boolean isDone = false;
 	TextView tv ;
 	
 	@Override
 	protected void onPreExecute() {		
-		Log.i("HardwareTask", "onPreExecute");
 		isDone = false;
 		
 		tv = (TextView) mCallerActivity.findViewById(R.id.ConnectionString);
@@ -36,36 +36,33 @@ public class HardwareTask extends AsyncTask<Void, Void, Boolean>{
 	@Override
 	protected Boolean doInBackground(Void... params) {
 		// TODO Auto-generated method stub
-		tv = (TextView) mCallerActivity.findViewById(R.id.textView1);
 		
 		byte[] receive;
 		
-        while (!isDone && !isCancelled()) {
-        	
-        	Log.i("HardwareTask", "inloop");
+        while (!isDone && !isCancelled() && (canFD!=-1)) {
         	
         	receive = canReadBytes(canFD);
-        	
-    		Log.i("HardwareTask", "forendinloop");
     		
-    		String s = new String(receive);
-    		tv.setText(s); 
+    		if(receive!=null)
+    		{
+    			s = new String(receive);
+    			
+        		Log.i("HardwareTask", "Received Data : "+s);
+        		publishProgress();
+    		}
     		
-        	Log.i("HardwareTask", "nextloop");
         	try {
-				Thread.sleep(500);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
         }
-        
-		Log.i("HardwareTask", "outside");
-        
+
 		return false;
 	}
 	
-	public void pollHardware(Activity	act)	{
+	public void pollHardware(Activity act)	{
 		mCallerActivity = act;
 		execute();
 	}
@@ -83,11 +80,20 @@ public class HardwareTask extends AsyncTask<Void, Void, Boolean>{
 	}
     @Override
     protected void onPostExecute(Boolean result){
-    	canClose(canFD);
+    	if(canFD!=-1)
+    	{
+    		canClose(canFD);
+    	}
     }
 	public void SendBytes(int length, byte[] send) {
 		// TODO Auto-generated method stub
 		canSendBytes(canFD, length, send);
 	}
+	
+    @Override
+    protected void onProgressUpdate(Void... values) {
+    	tv = (TextView) mCallerActivity.findViewById(R.id.textView1);
+		tv.setText("Received Data : " + s); 
+    }
 
 }

@@ -59,23 +59,41 @@ int canOpenRaw(const char *port)
 	return canFD;
 }
 
-unsigned char* canReadBytes(int canFD)
+unsigned char* canReadBytes(int fd, int *length)
 {
 	struct can_frame frame;
 
-    read(canFD, &frame, sizeof(struct can_frame));
+	struct timeval timeout = {1,0};
+	
+	fd_set set;
+	FD_ZERO(&set);
+	FD_SET(fd, &set);
 
-    unsigned char* data = (unsigned char *)malloc(sizeof(unsigned char)*(frame.can_dlc+1));
-
-    data[0] = frame.data[0];
-    int i=1;
-	while(i<frame.can_dlc)
+	if(select((fd + 1), &set, NULL, NULL, &timeout) >= 0)
 	{
-		data[i] = frame.data[i];
-		i++;
+		if(FD_ISSET(fd, &set))
+		{
+			read(fd, &frame, sizeof(struct can_frame));
+
+			unsigned char* data = (unsigned char *)malloc(sizeof(unsigned char)*(frame.can_dlc+1));
+
+    		data[0] = frame.data[0];
+    		int i=1;
+			while(i<frame.can_dlc)
+			{
+				data[i] = frame.data[i];
+				i++;
+			}
+
+			*length = frame.can_dlc;
+
+		    return data;
+		}
 	}
 
-    return data;
+	*length = 0;
+
+	return NULL;
 }
 
 int canSendBytes(int canFD, unsigned int no_bytes, unsigned char data[])
