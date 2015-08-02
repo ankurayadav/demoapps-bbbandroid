@@ -563,56 +563,7 @@ jboolean JAVA_CLASS_PATH(usbGetDevices)(JNIEnv *env, jobject this, jobjectArray 
 		memcpy(dstring, strings[i][2], strlen(strings[i][2]));
 		(*env)->ReleaseByteArrayElements(env, mystrarray, dstring, 2);
 	}
-
-/*
-		dids[i][0] = ids[i][0]; 
-		dids[i][1] = ids[i][1];
-		dids[i][2] = ids[i][2];
-		dids[i][3] = ids[i][3];
-
-		dids[i][4] = ids[i][4]; //either -1 or path value 
-
-		if(ids[i][4]!=-1)
-		{	
-			for (j = 1; ids[i][4+j]!=-1; j++)
-			{
-				dids[i][4+j] = ids[i][4+j];
-			}
-
-			dids[i][4+j] = ids[i][4+j];
-		}
-
-		if(strings[i][0][0] != '\0')
-		{
-			memcpy(dstrings[i][0], strings[i][0], sizeof(strings[i][0]));
-		}
-		else
-		{
-			dstrings[i][0][0] = '\0';
-		}
-
-		if(strings[i][1][0] != '\0')
-		{
-			memcpy(dstrings[i][1], strings[i][1], sizeof(strings[i][1]));
-		}
-		else
-		{
-			dstrings[i][1][0] = '\0';
-		}
-
-		if(strings[i][2][0] != '\0')
-		{
-			memcpy(dstrings[i][2], strings[i][2], sizeof(strings[i][2]));
-		}
-		else
-		{
-			dstrings[i][2][0] = '\0';
-		}
-	}*/
-__android_log_print(ANDROID_LOG_DEBUG, BBBANDROID_NATIVE_TAG, "here2");
-	//(*env)->ReleaseIntArrayElements(env, usbIds, dids, 0);
-	//(*env)->ReleaseByteArrayElements(env, usbStrings, dstrings, 0);
-
+	
 	return JNI_TRUE;
 }
 

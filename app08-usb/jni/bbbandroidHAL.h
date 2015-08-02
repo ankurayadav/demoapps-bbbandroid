@@ -75,7 +75,7 @@ extern int uartWrite(int uartFD, int length, unsigned char *bytes);
 extern int uartRead(int uartFD, int length, unsigned char *bytes);
 extern void uartClose(int uartFD);
 
-/* CAN interfacing functions */
+/* USB interfacing functions */
 extern ssize_t usbInit();
 extern void usbClose();
 extern int usbGetDevices(int ids[][8], unsigned char strings[][3][256]);
