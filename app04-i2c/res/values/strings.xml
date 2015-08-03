@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">gpio</string>
+    <string name="app_name">i2c</string>
     <string name="action_settings">Settings</string>
     <string name="button_state">Sensor State </string>
     <string name="button_poll">Poll Sensor State</string>
