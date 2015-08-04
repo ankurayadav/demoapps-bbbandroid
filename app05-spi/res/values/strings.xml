@@ -4,8 +4,6 @@
     <string name="app_name">spi</string>
     <string name="action_settings">Settings</string>
     <string name="button_state">Button State: </string>
-    <string name="button_poll">Poll Slider State</string>
-    <string name="button_on">Turn light on</string>
-    <string name="button_off">Turn light off</string>
+    <string name="button_poll">Set Display</string>
 
 </resources>

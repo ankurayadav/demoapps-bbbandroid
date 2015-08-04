@@ -17,12 +17,6 @@
 	        android:layout_gravity="right"
 	        android:onClick="onClickButtonPollStatus"
 	        android:text="@string/button_poll" />
-
-	    <TextView
-	        android:id="@+id/button_state"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/button_state" />
     
     </LinearLayout>
     
@@ -30,6 +24,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
     	android:orientation="horizontal" >
+
 	</LinearLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
 
 </LinearLayout>
