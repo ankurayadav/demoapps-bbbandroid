@@ -1,10 +1,10 @@
-GPIO access using Android on BBBAndroid
+UART access using Android on BBBAndroid
 ==============================
 
 Hardware requirements:
 -----------------------------
 
-1. Breadboard
-2. LED
-3. 1K resister
-4. switch
+1. 2 Beagleboards
+
+###Screenshot of UART android application
+![UART app](uart.png?raw=true)

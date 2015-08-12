@@ -1,10 +1,10 @@
-GPIO access using Android on BBBAndroid
+USB access using Android on BBBAndroid
 ==============================
 
 Hardware requirements:
 -----------------------------
 
-1. Breadboard
-2. LED
-3. 1K resister
-4. switch
+1. BeagleBoard
+
+###Screenshot of USB android application
+![USB app](usb.png?raw=true)
